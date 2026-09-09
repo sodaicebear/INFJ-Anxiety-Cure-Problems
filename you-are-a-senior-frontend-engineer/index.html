@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Stillpoint is an anxiety self-help toolkit for INFJs, with breathing, grounding, reframing, and daily planning exercises." />
+<meta property="og:title" content="Stillpoint — An anxiety toolkit for INFJs" />
+<meta property="og:description" content="A calm, private anxiety self-help toolkit for INFJs." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Stillpoint — An anxiety toolkit for INFJs" />
+<meta name="twitter:description" content="A calm, private anxiety self-help toolkit for INFJs." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<title>Stillpoint — An anxiety toolkit for INFJs</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
+<header>
+  <div class="wrap bar">
+    <div class="header-tools">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> Stillpoint</div>
+      <div class="header-switches">
+        <div class="switch-control">
+          <span class="switch-label" id="themeLabel">Light</span>
+          <button class="switch" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Current theme: light. Activate to switch to dark theme."><span class="switch-thumb" aria-hidden="true"></span></button>
+        </div>
+        <div class="switch-control">
+          <span class="switch-label" id="languageLabel">EN</span>
+          <button class="switch" id="languageToggle" type="button" role="switch" aria-checked="false" aria-label="Current language: English. Activate to switch to Bahasa Indonesia."><span class="switch-thumb" aria-hidden="true"></span></button>
+        </div>
+      </div>
+    </div>
+    <nav role="tablist" aria-label="Sections" data-i18n-aria-label="nav.label">
+      <button id="tab-breathe" role="tab" data-tab="breathe" aria-controls="breathe" aria-selected="true" tabindex="0" data-i18n="tabs.breathe">Breathe</button>
+      <button id="tab-ground" role="tab" data-tab="ground" aria-controls="ground" aria-selected="false" tabindex="-1" data-i18n="tabs.ground">Ground</button>
+      <button id="tab-reframe" role="tab" data-tab="reframe" aria-controls="reframe" aria-selected="false" tabindex="-1" data-i18n="tabs.reframe">Reframe</button>
+      <button id="tab-patterns" role="tab" data-tab="patterns" aria-controls="patterns" aria-selected="false" tabindex="-1" data-i18n="tabs.patterns">INFJ patterns</button>
+      <button id="tab-plan" role="tab" data-tab="plan" aria-controls="plan" aria-selected="false" tabindex="-1" data-i18n="tabs.plan">Daily plan</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="eyebrow" data-i18n="hero.eyebrow">A calm room for an overthinking mind</p>
+        <h1 data-i18n="hero.title">Your anxiety is mostly your intuition running without a brake.</h1>
+        <p class="lede" data-i18n="hero.lede">INFJ anxiety rarely comes from nothing. It comes from absorbing other people, predicting ten futures at once, and holding it all in silence. Stillpoint gives you four moves: settle the body, return to now, question the story, protect your energy.</p>
+        <div class="cta">
+          <button class="btn" data-goto="breathe" data-i18n="hero.start">Start a 2-minute reset</button>
+          <button class="btn ghost" data-goto="patterns" data-i18n="hero.patterns">See my patterns</button>
+        </div>
+      </div>
+      <div class="orb-card">
+        <div class="orb" aria-hidden="true"><span data-i18n="hero.orb">here, now</span></div>
+        <p class="small muted" style="margin:0" data-i18n="hero.privacy">Nothing here is stored anywhere but this browser. Nothing is sent, shared, or scored.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREATHE -->
+  <section id="breathe" class="wrap" role="tabpanel" aria-labelledby="tab-breathe">
+    <h2 data-i18n="breathe.title">1. Settle the body first</h2>
+    <p class="sub" data-i18n="breathe.sub">You cannot reason your way out of a nervous system that thinks it is in danger. A long exhale is the fastest honest signal that you are safe. Follow the circle: inhale 4, hold 4, exhale 6.</p>
+    <div class="breathe">
+      <div class="ring" role="timer" aria-live="polite">
+        <div class="fill" id="fill"></div>
+        <div class="label" id="phase" data-i18n="breathe.ready">Ready</div>
+        <div class="count" id="count" data-i18n="breathe.pressStart">Press start</div>
+      </div>
+      <div>
+        <h3 data-i18n="breathe.whyTitle">Why this works for you</h3>
+        <p class="muted" data-i18n="breathe.why">Your mind is fast and abstract, so it will try to "solve" the anxiety. Breathing gives it a small, concrete, finishable job — which is the only kind of job an anxious INFJ mind can actually complete.</p>
+        <div class="cta" style="margin-top:24px">
+          <button class="btn" id="startBtn" data-i18n="breathe.start">Start</button>
+          <button class="btn ghost" id="stopBtn" data-i18n="breathe.reset">Reset</button>
+        </div>
+        <ul class="stat">
+          <li><span data-i18n="breathe.cycles">Cycles completed:</span> <strong id="cycles" style="color:var(--text)">0</strong></li>
+          <li data-i18n="breathe.aim">Aim for 6 cycles</li>
+        </ul>
+        <div class="card soft" style="margin-top:24px">
+          <h3 data-i18n="breathe.tightTitle">If your chest is tight right now</h3>
+          <p class="small muted" style="margin:0" data-i18n="breathe.tight">Put both feet flat, unclench your jaw, drop your shoulders, and let the exhale be longer than the inhale. Do that three times before reading anything else on this page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUND -->
+  <section id="ground" class="wrap" role="tabpanel" aria-labelledby="tab-ground" hidden>
+    <h2 data-i18n="ground.title">2. Come back from the future</h2>
+    <p class="sub" data-i18n="ground.sub">Ni-Fi anxiety lives in scenarios that have not happened. Grounding does not argue with the scenario — it just moves your attention to the room you are actually in. Fill in what you notice; the boxes are yours alone.</p>
+    <div class="grid2">
+      <ol class="steps" id="steps">
+        <li class="step"><span class="num">5</span><div style="flex:1"><strong data-i18n="ground.see">things you can see</strong><input type="text" placeholder="lamp, window, mug…" aria-label="Five things you can see" data-i18n-placeholder="ground.seePlaceholder" data-i18n-aria-label="ground.seeAria" /></div></li>
+        <li class="step"><span class="num">4</span><div style="flex:1"><strong data-i18n="ground.touch">things you can touch</strong><input type="text" placeholder="desk, sleeve, floor…" aria-label="Four things you can touch" data-i18n-placeholder="ground.touchPlaceholder" data-i18n-aria-label="ground.touchAria" /></div></li>
+        <li class="step"><span class="num">3</span><div style="flex:1"><strong data-i18n="ground.hear">sounds you can hear</strong><input type="text" placeholder="fan, traffic, my breath…" aria-label="Three sounds you can hear" data-i18n-placeholder="ground.hearPlaceholder" data-i18n-aria-label="ground.hearAria" /></div></li>
+        <li class="step"><span class="num">2</span><div style="flex:1"><strong data-i18n="ground.smell">things you can smell</strong><input type="text" placeholder="coffee, rain…" aria-label="Two things you can smell" data-i18n-placeholder="ground.smellPlaceholder" data-i18n-aria-label="ground.smellAria" /></div></li>
+        <li class="step"><span class="num">1</span><div style="flex:1"><strong data-i18n="ground.good">thing that is true and good right now</strong><input type="text" placeholder="I am safe in this room." aria-label="One good thing that is true now" data-i18n-placeholder="ground.goodPlaceholder" data-i18n-aria-label="ground.goodAria" /></div></li>
+      </ol>
+      <div>
+        <div class="card soft">
+          <h3 data-i18n="ground.tenTitle">The 10-second version</h3>
+          <p class="muted small" data-i18n="ground.ten">In a meeting or a crowd, you do not need all five. Name three things you can see and press your feet into the floor. That is enough to interrupt the spiral.</p>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h3 data-i18n="ground.whoseTitle">Whose feeling is this?</h3>
+          <p class="muted small" style="margin:0 0 12px" data-i18n="ground.whose">INFJs absorb the mood of the room and then treat it as their own. Ask, in order:</p>
+          <p class="small" style="margin:0 0 8px" data-i18n="ground.question1">· Was I anxious before I saw this person or message?</p>
+          <p class="small" style="margin:0 0 8px" data-i18n="ground.question2">· Is there an actual request being made of me?</p>
+          <p class="small" style="margin:0" data-i18n="ground.question3">· If this feeling belongs to someone else, I can care about it without carrying it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFRAME -->
+  <section id="reframe" class="wrap" role="tabpanel" aria-labelledby="tab-reframe" hidden>
+    <h2 data-i18n="reframe.title">3. Put the story on trial</h2>
+    <p class="sub" data-i18n="reframe.sub">Your intuition is often right about patterns and often wrong about certainty. Write the thought down, then answer four questions. Seeing it outside your head takes away most of its authority.</p>
+    <div class="grid2">
+      <div>
+        <div class="field">
+          <label for="thought" data-i18n="reframe.thoughtLabel">The thought that is looping</label>
+          <textarea id="thought" placeholder="They replied briefly, so I must have done something wrong and this relationship is ending." data-i18n-placeholder="reframe.thoughtPlaceholder"></textarea>
+        </div>
+        <div class="field">
+          <label for="evidence" data-i18n="reframe.evidenceLabel">Facts I can actually verify</label>
+          <textarea id="evidence" placeholder="They sent three words. They were in a busy week." data-i18n-placeholder="reframe.evidencePlaceholder"></textarea>
+        </div>
+        <div class="field">
+          <label for="alt" data-i18n="reframe.altLabel">A second explanation that fits the same facts</label>
+          <textarea id="alt" placeholder="They were tired and answered fast." data-i18n-placeholder="reframe.altPlaceholder"></textarea>
+        </div>
+        <div class="field">
+          <label for="act" data-i18n="reframe.actLabel">The smallest thing I can do in the next hour</label>
+          <textarea id="act" placeholder="Ask one direct question, or close the laptop and walk." data-i18n-placeholder="reframe.actPlaceholder"></textarea>
+        </div>
+        <button class="btn" id="buildBtn" data-i18n="reframe.build">Build my reframe</button>
+      </div>
+      <div>
+        <div class="out" id="out" aria-live="polite">
+          <h4 data-i18n="reframe.outputTitle">Your reframe</h4>
+          <p class="muted" style="margin:0" data-i18n="reframe.outputHint">Fill in the fields and press the button. Your reframe will appear here so you can read it back as a sentence instead of a feeling.</p>
+        </div>
+        <div class="card soft" style="margin-top:16px">
+          <h3 data-i18n="reframe.memoryTitle">Three sentences worth memorising</h3>
+          <blockquote data-i18n="reframe.quote1">A prediction is not information.</blockquote>
+          <blockquote data-i18n="reframe.quote2">I can hold someone's pain without making it my responsibility.</blockquote>
+          <blockquote data-i18n="reframe.quote3">Not deciding today is also a decision I am allowed to make.</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATTERNS -->
+  <section id="patterns" class="wrap" role="tabpanel" aria-labelledby="tab-patterns" hidden>
+    <h2 data-i18n="patterns.title">4. The five loops that catch INFJs</h2>
+    <p class="sub" data-i18n="patterns.sub">Anxiety is easier to interrupt when it has a name. Open the one that sounds like this week and use the counter-move — not as self-improvement, just as a way out of the room.</p>
+    <div style="display:grid;gap:12px">
+      <details class="pattern" open>
+        <summary><span data-i18n="patterns.oneTitle">Doorslam dread — reading distance into every small silence</span> <span class="tag" data-i18n="patterns.oneTag">Fi–Ni loop</span></summary>
+        <div class="body">
+          <p class="muted" data-i18n="patterns.oneBody">You notice a tone shift, build a full story about being unwanted, then quietly withdraw first to protect yourself. The withdrawal then creates the distance you feared.</p>
+          <p><strong data-i18n="patterns.counter">Counter-move:</strong> <span data-i18n="patterns.oneMove">ask one plain question out loud within 24 hours. "Are we okay? Your message read short to me." Direct questions cost less than a week of simulation.</span></p>
+        </div>
+      </details>
+      <details class="pattern">
+        <summary><span data-i18n="patterns.twoTitle">Absorbed emotion — carrying feelings that were never yours</span> <span class="tag" data-i18n="patterns.twoTag">Fe overload</span></summary>
+        <div class="body">
+          <p class="muted" data-i18n="patterns.twoBody">You leave a conversation heavier than you arrived and cannot say why. Your empathy has no default off switch, so other people's stress becomes your body's stress.</p>
+          <p><strong data-i18n="patterns.counter">Counter-move:</strong> <span data-i18n="patterns.twoMove">a 20-minute decompression buffer after intense contact. No phone, no analysis. Walk, wash dishes, stretch. Give the borrowed feeling somewhere to leave.</span></p>
+        </div>
+      </details>
+      <details class="pattern">
+        <summary><span data-i18n="patterns.threeTitle">Perfect-standard paralysis — nothing is ready, so nothing ships</span> <span class="tag" data-i18n="patterns.threeTag">Ni idealism</span></summary>
+        <div class="body">
+          <p class="muted" data-i18n="patterns.threeBody">You can see the ideal version so vividly that the real version feels humiliating. So you delay, and the delay becomes new anxiety.</p>
+          <p><strong data-i18n="patterns.counter">Counter-move:</strong> <span data-i18n="patterns.threeMove">set a deliberate "good enough" line before you start, and a hard stop time. Ship at the line. Your vision is a compass, not an entry requirement.</span></p>
+        </div>
+      </details>
+      <details class="pattern">
+        <summary><span data-i18n="patterns.fourTitle">Over-giving then resentment — yes now, exhaustion later</span> <span class="tag" data-i18n="patterns.fourTag">Weak boundary</span></summary>
+        <div class="body">
+          <p class="muted" data-i18n="patterns.fourBody">You agree because you can feel how much they need it, then resent the cost. Resentment turns inward and reads as anxiety and guilt.</p>
+          <p><strong data-i18n="patterns.counter">Counter-move:</strong> <span data-i18n="patterns.fourMove">buy time before agreeing. "Let me check and come back to you tonight." One sentence protects most of your week.</span></p>
+        </div>
+      </details>
+      <details class="pattern">
+        <summary><span data-i18n="patterns.fiveTitle">Sensory and social depletion — the crash after being seen</span> <span class="tag" data-i18n="patterns.fiveTag">Se grip</span></summary>
+        <div class="body">
+          <p class="muted" data-i18n="patterns.fiveBody">After long social exposure you overeat, doomscroll, or overspend, then feel out of control and anxious about yourself.</p>
+          <p><strong data-i18n="patterns.counter">Counter-move:</strong> <span data-i18n="patterns.fiveMove">plan the recovery before the event, not after. Book solitude on the calendar as if it were a meeting, because for you it is one.</span></p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- PLAN -->
+  <section id="plan" class="wrap" role="tabpanel" aria-labelledby="tab-plan" hidden>
+    <h2 data-i18n="plan.title">5. A day built for a sensitive nervous system</h2>
+    <p class="sub" data-i18n="plan.sub">Anxiety drops most from boring structure, not insight. Tick what you did today — the list resets itself each day and lives only in this browser.</p>
+    <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+    <div class="grid2">
+      <ul class="plan" id="planList">
+        <li><input type="checkbox" id="p1"><label for="p1" style="font-weight:500;margin:0"><span data-i18n="plan.item1">Daylight and movement within an hour of waking</span> <span class="when" data-i18n="plan.morning">— morning</span></label></li>
+        <li><input type="checkbox" id="p2"><label for="p2" style="font-weight:500;margin:0"><span data-i18n="plan.item2">Write the top worry on paper before opening messages</span> <span class="when" data-i18n="plan.morning">— morning</span></label></li>
+        <li><input type="checkbox" id="p3"><label for="p3" style="font-weight:500;margin:0"><span data-i18n="plan.item3">One 90-minute deep-work block, phone in another room</span> <span class="when" data-i18n="plan.midday">— midday</span></label></li>
+        <li><input type="checkbox" id="p4"><label for="p4" style="font-weight:500;margin:0"><span data-i18n="plan.item4">20 minutes of protected solitude, no input</span> <span class="when" data-i18n="plan.afternoon">— afternoon</span></label></li>
+        <li><input type="checkbox" id="p5"><label for="p5" style="font-weight:500;margin:0"><span data-i18n="plan.item5">Say one true thing out loud to one person</span> <span class="when" data-i18n="plan.evening">— evening</span></label></li>
+        <li><input type="checkbox" id="p6"><label for="p6" style="font-weight:500;margin:0"><span data-i18n="plan.item6">Screens off 45 minutes before bed</span> <span class="when" data-i18n="plan.night">— night</span></label></li>
+      </ul>
+      <div>
+        <div class="card soft">
+          <h3 data-i18n="plan.boundaryTitle">Boundary lines you can borrow</h3>
+          <blockquote data-i18n="plan.boundary1">"I want to help, and I need to check my week first."</blockquote>
+          <blockquote data-i18n="plan.boundary2">"I care about this. I don't have the capacity today."</blockquote>
+          <blockquote data-i18n="plan.boundary3">"Can I answer you tomorrow morning?"</blockquote>
+        </div>
+        <div class="card" style="margin-top:16px;border-color:var(--orange);background:var(--orange-soft)">
+          <h3 data-i18n="plan.crisisTitle">When to bring in a person, not a page</h3>
+          <p class="small" style="margin:0" data-i18n="plan.crisis">If anxiety is stopping you from sleeping, eating, studying, or leaving the house for weeks, or you have thoughts of harming yourself, please talk to a doctor, a campus counsellor, or a local crisis line. This site is a self-help tool, not treatment, and reaching out is a strength move, not a failure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span data-i18n="footer">Stillpoint · built for one quiet, intense mind · everything you type stays on this device</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
